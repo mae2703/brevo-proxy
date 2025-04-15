@@ -4,7 +4,7 @@
     "description": "Proxy para la API de Brevo",
     "main": "index.js",
     "scripts": {
-      "start": "node index.js"
+      "start": "node app.js"
     },
     "dependencies": {
       "axios": "^1.6.0",
