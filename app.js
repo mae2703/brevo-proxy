@@ -24,6 +24,28 @@ app.get('/brevo', async (req, res) => {
   }
 });
 
+// NUEVO ENDPOINT para Grafana
+app.get('/brevo/smtp/statistics/aggregatedReport', async (req, res) => {
+  try {
+    const { startDate, endDate } = req.query;
+
+    const response = await axios.get('https://api.brevo.com/v3/smtp/statistics/aggregatedReport', {
+      headers: {
+        'api-key': apiKey
+      },
+      params: {
+        startDate,
+        endDate
+      }
+    });
+
+    res.json(response.data);
+  } catch (error) {
+    console.error(error.response?.data || error.message);
+    res.status(500).send('Error al obtener datos agregados de Brevo');
+  }
+});
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
   console.log(`By Maylon Escaño`);
