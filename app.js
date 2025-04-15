@@ -1,9 +1,8 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
-const port = process.env.PORT || 3000;
 
-// Leer API key desde variables de entorno
+const port = process.env.PORT || 3000;
 const apiKey = process.env.BREVO_API_KEY;
 
 if (!apiKey) {
