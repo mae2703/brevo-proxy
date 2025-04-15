@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -9,6 +10,8 @@ if (!apiKey) {
   console.error("API Key no está configurada");
   process.exit(1);
 }
+
+app.use(cors()); // Habilitar CORS
 
 app.get('/brevo', async (req, res) => {
   try {
