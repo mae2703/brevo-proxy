@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "axios": "^0.21.1"
+    "prom-client": "^14.1.1"
   },
   "scripts": {
     "start": "node app.js"
