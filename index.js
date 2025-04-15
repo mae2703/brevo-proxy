@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 const API_KEY = process.env.BREVO_API_KEY;
-const BREVO_API = process.env.BREVO_API || "https://api.brevo.com/v3";
+const BREVO_API = process.env.BREVO_API || "https://api.brevo.com/v3/";
 
 app.all("/proxy-brevo/*", async (req, res) => {
   try {
